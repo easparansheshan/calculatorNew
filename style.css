@@ -1,0 +1,58 @@
+
+#table1{
+    margin-top: 50px;
+    border: 3px solid black;
+    height: 400px;
+    width: 240px;
+    margin-left: 25px;
+    background-image: url("back.jpg");
+}
+#answerbox{
+    border-bottom: 2px solid black;
+}
+
+
+.firstrow, .secondrow, .thirdrow, .fourthrow{
+    margin-right: 15px;
+}
+
+.firstrow{
+    margin-top: 15px;
+}
+
+#para1{
+    color: red;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 25px;
+    margin-bottom: 58px;
+
+}
+
+#header1{
+    border-right: 1px solid white;
+    margin-right: 70px;
+    text-align: left;
+}
+.social{
+    color: white;
+    margin-right: 10px;
+}
+
+#para4{
+    font-size: 14px;
+}
+#social{
+    border-left: 2px solid white;
+    margin-right: -120px;
+}
+
+.social:hover{
+    color: white;
+    font-weight: bold;
+}
+
+#footer{
+    bootom: 0;
+    text-align: center;
+}

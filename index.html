@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <!-- Connect external css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- End of external  stylesheet -->
+
+    <!-- Online bootstrap cdn link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- end of bootstrap cdn -->
+
+    <!-- Fon awesome cdn link -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body style="background-color: aqua;">
+    <!-- Nav bar -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="col-2">
+            <p class="text-white" id="header1">Calculator App</p>
+        </div>
+        <div class="col-7">
+
+        </div>
+        <div class="col-3" id="social">
+            <a href="https://www.facebook.com/easparan.sheshan/" id="facebook" target="_blank" class="social"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="https://github.com/easparansheshan" id="github" target="_blank" class="social"><i class="fab fa-github fa-lg"></i></a>
+            <a href="https://www.linkedin.com/in/easparan-sheshan-97ba7418a/" id="linkedin" target="_blank" class="social"><i class="fab fa-linkedin fa-lg"></i></a>
+            <!-- <a href="#" id="instagram" target="_blank" class="social"><i class="fab fa-instagram fa-lg"></i></a> -->
+            <a href="https://wa.me/94767160699" target="_blank" id="whatsapp" class="social"><i class="fab fa-whatsapp fa-lg"><span id="para4">0767160699</span></i></a>
+        </div>
+    </nav>
+    <!-- end navbar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <!-- visual off Calculator -->
+            <div class="col-4">
+                <table id="table1">
+                    <!-- Answer box  -->
+                    <tr id="answerbox">
+                        <td id="answer"><input id="answer1" type="text" class="form-control" placeholder="" />
+                        </td>
+                    </tr>
+
+                    <!-- Numeric Typing Pad first row-->
+                    <tr>
+                        <td id="clear" class="btn btn-danger firstrow ml-3">C</td>
+                        <td id="1" class="btn btn-warning firstrow">1</td>
+                        <td id="2" class="btn btn-warning firstrow">2</td>
+                        <td id="addition" class="btn btn-info firstrow">+</td>
+                    </tr>
+
+                    <!-- Numeric pad 2nd row -->
+                    <tr>
+                        <td id="3" class="btn btn-warning secondrow ml-3">3</td>
+                        <td id="4" class="btn btn-warning secondrow">4</td>
+                        <td id="5" class="btn btn-warning secondrow">5</td>
+                        <td id="subtraction" class="btn btn-info secondrow">-</td>
+                    </tr>
+                    <!-- Numeric pad 3rd row -->
+                    <tr>
+                        <td id="6" class="btn btn-warning thirdrow ml-3">6</td>
+                        <td id="7" class="btn btn-warning thirdrow">7</td>
+                        <td id="8" class="btn btn-warning thirdrow">8</td>
+                        <td id="multiplication" class="btn btn-info thirdrow">*</td>
+                    </tr>
+                    <!-- Numeric pad 4th row -->
+                    <tr>
+                        <td id="9" class="btn btn-warning fourthrow ml-3">9</td>
+                        <td id="0" class="btn btn-warning fourthrow">0</td>
+                        <td id="division" class="btn btn-warning fourthrow">/</td>
+                        <td id="equal" class="btn btn-dark fourthrow">=</td>
+                    </tr>
+
+
+                </table>
+                <p id="para1">*System will not accept keyboard input</p>
+            </div>
+            <!-- End of Calculator -->
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+    <footer id="footer" class="bg-dark">
+        <p id="para5" class="text-white">All Rights Reserved @SHESHAN</p>
+    </footer>
+
+    <!-- Javascript -->
+    <script>
+        var val1 = '';
+        var val2 = '';
+        var val3 = [];
+        var fun;
+        var sum = 0;
+
+        $(document).ready(function () {
+            $("#addition").click(function () {
+                fun = "+";
+                $("#answer1").val("+");
+                val3 = [];
+                val3.push(fun);
+            })
+
+            $("#subtraction").click(function () {
+                fun = "-";
+                $("#answer1").val("-");
+                val3 = [];
+                val3.push(fun);
+            })
+
+            $("#multiplication").click(function () {
+                fun = "*";
+                $("#answer1").val("*");
+                val3 = [];
+                val3.push(fun);
+            })
+
+            $("#division").click(function () {
+                fun = "/";
+                $("#answer1").val("/");
+                val3 = [];
+                val3.push(fun);
+            })
+        })
+
+        $(document).ready(function () {
+            $("#1").click(function () {
+                if (val3.length == 0) {
+                    val1 = val1 + 1;
+                    $("#answer1").val(val1);
+                } else {
+                    val2 = val2 + 1;
+                    $("#answer1").val(val2);
+                }
+            })
+
+            $("#2").click(function () {
+                if (val3.length == 0) {
+                    val1 = val1 + 2;
+                    $("#answer1").val(val1);
+                } else {
+                    val2 = val2 + 2;
+                    $("#answer1").val(val2);
+                }
+            })
+
+            $("#3").click(function () {
+                if (val3.length == 0) {
+                    val1 = val1 + 3;
+                    $("#answer1").val(val1);
+                } else {
+                    val2 = val2 + 3;
+                    $("#answer1").val(val2);
+                }
+            })
+
+            $("#4").click(function () {
+                if (val3.length == 0) {
+                    val1 = val1 + 4;
+                    $("#answer1").val(val1);
+                } else {
+                    val2 = val2 + 4;
+                    $("#answer1").val(val2);
+                }
+            })
+
+            $("#5").click(function () {
+                if (val3.length == 0) {
+                    val1 = val1 + 5;
+                    $("#answer1").val(val1);
+                } else {
+                    val2 = val2 + 5;
+                    $("#answer1").val(val2);
+                }
+            })
+
+            $("#6").click(function () {
+                if (val3.length == 0) {
+                    val1 = val1 + 6;
+                    $("#answer1").val(val1);
+                } else {
+                    val2 = val2 + 6;
+                    $("#answer1").val(val2);
+                }
+            })
+
+            $("#7").click(function () {
+                if (val3.length == 0) {
+                    val1 = val1 + 7;
+                    $("#answer1").val(val1);
+                } else {
+                    val2 = val2 + 7;
+                    $("#answer1").val(val2);
+                }
+            })
+
+            $("#8").click(function () {
+                if (val3.length == 0) {
+                    val1 = val1 + 8;
+                    $("#answer1").val(val1);
+                } else {
+                    val2 = val2 + 8;
+                    $("#answer1").val(val2);
+                }
+            })
+
+            $("#9").click(function () {
+                if (val3.length == 0) {
+                    val1 = val1 + 9;
+                    $("#answer1").val(val1);
+                } else {
+                    val2 = val2 + 9;
+                    $("#answer1").val(val2);
+                }
+            })
+
+            $("#0").click(function () {
+                if (val3.length == 0) {
+                    val1 = val1 + 0;
+                    $("#answer1").val(val1);
+                } else {
+                    val2 = val2 + 0;
+                    $("#answer1").val(val2);
+                }
+            })
+        })
+
+        /*Equal sign function*/
+        $(document).ready(function () {
+            $("#equal").click(function () {
+                val1 = parseInt(val1);
+                val2 = parseInt(val2);
+
+                if (val3 == "+") {
+                    sum = val1 + val2;
+                } else if (val3 == "-") {
+                    sum = val1 - val2;
+                } else if (val3 == "*") {
+                    sum = val1 * val2;
+                } else if (val3 == "/") {
+                    sum = val1 / val2;
+                } else {
+                    sum = "Enter Valid Input";
+                }
+                $("#answer1").val(sum);
+            })
+        })
+
+        /*Clear button*/
+        $(document).ready(function () {
+            $("#clear").click(function () {
+                val1 = "";
+                val2 = "";
+                val3 = [];
+                $("#answer1").val("");
+            })
+        })
+    </script>
+</body>
+
+</html>
